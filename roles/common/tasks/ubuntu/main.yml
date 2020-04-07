@@ -1,0 +1,7 @@
+- name: update apt package cache db
+  apt:
+    update_cache: true
+
+- name: dist upgrade
+  apt:
+    upgrade: dist

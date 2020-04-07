@@ -1,0 +1,8 @@
+---
+- name: include general definition
+  include: general/main.yml
+
+- name: include ubuntu definition
+  include: ubuntu/main.yml
+  become: yes
+  when: ansible_distribution == 'Ubuntu'

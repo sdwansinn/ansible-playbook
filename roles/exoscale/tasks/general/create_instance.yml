@@ -1,0 +1,18 @@
+---
+- name: create exoscale instance
+  cs_instance:
+    name: "{{ exoscaleConfig['name'] }}"
+    template: "{{ exoscaleConfig['template'] }}"
+    zone: "{{ exoscaleConfig['zone'] }}"
+    service_offering: "{{ exoscaleConfig['type'] }}"
+    disk_size: "{{ exoscaleConfig['disk_size'] }}"
+    ssh_key: "{{ exoscaleConfig['ssh_key'] }}"
+    security_groups: "{{ exoscaleConfig['security_groups'] }}"
+  delegate_to: localhost
+  register: exoscale_instance
+
+- name: Register host for inventory
+  add_host:
+    name: "{{ exoscale_instance.default_ip }}"
+    groups: [ default, common ]
+    ansible_user: ubuntu

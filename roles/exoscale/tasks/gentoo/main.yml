@@ -1,0 +1,5 @@
+# Install packages with portage
+- portage:
+    package:
+      - dev-python/pip
+    state: present

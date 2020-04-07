@@ -1,0 +1,5 @@
+---
+# Install (cs) python package for exoscale
+- pip:
+    name: cs
+    extra_args: --user

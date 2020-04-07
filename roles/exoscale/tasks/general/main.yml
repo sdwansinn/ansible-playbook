@@ -1,0 +1,6 @@
+---
+- name: include install requirements
+  include: dependencies.yml
+
+- name: include instance creation
+  include: create_instance.yml

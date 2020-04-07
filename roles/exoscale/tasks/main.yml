@@ -1,0 +1,7 @@
+---
+- name: include gentoo definition
+  include: gentoo/main.yml
+  when: ansible_distribution == 'Gentoo'
+
+- name: include general definition
+  include: general/main.yml

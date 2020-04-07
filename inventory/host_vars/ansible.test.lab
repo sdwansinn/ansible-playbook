@@ -1,0 +1,10 @@
+---
+'exoscaleConfig': {
+  'name': 'ansible.test.lab',
+  'template': 'Linux Ubuntu 18.04 LTS 64-bit',
+  'zone': 'de-fra-1',
+  'type': 'Micro',
+  'disk_size': '20',
+  'ssh_key': 'ansible',
+  'security_groups': [ 'default', 'test' ]
+}

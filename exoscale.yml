@@ -1,0 +1,7 @@
+---
+- name: assign exoscale role
+  hosts: exoscale
+  connection: local
+
+  roles:
+  - exoscale

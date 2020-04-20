@@ -8,6 +8,8 @@
     disk_size: "{{ exoscaleConfig['disk_size'] }}"
     ssh_key: "{{ exoscaleConfig['ssh_key'] }}"
     security_groups: "{{ exoscaleConfig['security_groups'] }}"
+    api_key: "{{ exoscaleConfig['api_key'] }}"
+    api_secret: "{{ exoscaleConfig['api_secret'] }}"
   delegate_to: localhost
   register: exoscale_instance
 

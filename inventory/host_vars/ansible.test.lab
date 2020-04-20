@@ -1,10 +1,44 @@
 ---
+'commonConfig': {
+  'network': {
+    'default': 'eth0',
+    'interfaces': {
+      'eth0': {
+        'ipv4addr': 'dhcp'
+      }
+    }
+  },
+  'sshPubKey': 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDR0ItJHUCz+LkyjHWHBkBhsYlYA5966iTpu8weeUBroH+IprP0md4BxR+4nf7oOGaLRZBNsObyH0Qa++qqiqKbpBaVJbqMIZj4P/z6oWr9mvdGCaw3iI45P3MGSr5roW2fiJb+uBNwqX2TNK/rlp4qkp40ftgjhJntpobNuK5ObnIxACIU9uSgBl0EAGQCbB/AyuK2K1Dx7p8JzIPmubgu7CzUETRPymxewDjWrJ0z8vQ1tnwRE8MiABxw44d0D5pRXK7XdNfE1VMAFY+G5gLsEBbtIfE2ExDtZYcAPXHQzTQlr6ICzwBkxzDsWo0y8ZBdKYWnj86HorrgXDoS8nMXyWkNtCwREkCjt3WXarsabRpK2QjxhqBUW9+D6efPy2wqpGRb0sgorId+AYLI5nVUZ+92dAQ6CaoICLLhXIV1vjvntxwm6ouBYV7p1ZpYfcFArIRf0E7d4BQTMc9HvOz8TjaXVe2pCai2HU+BrQYUxp4nk11iskNI8FzE7YhEZgZFxdk7gS1bSYRtfqAiVcV+DRACvLIFrXXTz8yly7BgUPmMJdC2H+LUDUlbFCBT++y2EnCG/vbslLytSjrxMMuc7wzCY8D9/sE0rVRhIEsOKWKzg3lCSoSf+M3muPaLPkghkKcOJETUeBX9tEYx8AXNx04JHegWUB49JE9jy8yHVQ== root@titanium'
+}
 'exoscaleConfig': {
   'name': 'ansible.test.lab',
-  'template': 'Linux Ubuntu 18.04 LTS 64-bit',
+  'template': 'VMware SD-WAN 3.3.2 BYOL',
   'zone': 'de-fra-1',
-  'type': 'Micro',
-  'disk_size': '20',
+  'type': 'Medium',
+  'disk_size': '10',
   'ssh_key': 'ansible',
-  'security_groups': [ 'default', 'test' ]
+  'security_groups': [ 'default', 'test' ],
+  'cloud-init': '~/router_default.yml'
+}
+'velocloudEdgeConfig': {
+  'rootpw': 'GzL3Sd05iIoeQIDa',
+  'copysshpubkeys': true,
+  'activation': {
+    'vco': 'vco1-fra.a1.digital',
+    'activation_key': '23de-34fe-b323-5341'
+  },
+  'network': {
+    'wan': 'eth2',
+    'interfaces': {
+      'eth0': {
+        'ipv4addr': 'static',
+      },
+      'eth1': {
+        'ipv4addr': 'dhcp',
+      },
+      'eth2': {
+        'ipv4addr': 'dhcp'
+      }
+    }
+  }
 }

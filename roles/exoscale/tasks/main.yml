@@ -3,5 +3,9 @@
   include: gentoo/main.yml
   when: ansible_distribution == 'Gentoo'
 
+- name: include centos definition
+  include: centos/main.yml
+  when: ansible_distribution == 'centos'
+
 - name: include general definition
   include: general/main.yml

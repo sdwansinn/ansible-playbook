@@ -1,0 +1,7 @@
+---
+- name: include general definition
+  include: general/main.yml
+
+- name: include centos definition
+  include: centos/main.yml
+  when: ansible_distribution == 'centos'

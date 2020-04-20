@@ -1,0 +1,6 @@
+---
+- name: assign 128TConductor role
+  hosts: 128TConductor
+
+  roles:
+  - 128TConductor

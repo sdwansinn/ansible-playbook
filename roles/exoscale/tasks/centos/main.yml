@@ -1,6 +1,20 @@
 ---
-- name: making sure python-pip is installed
+- name: installing 128T rpm repo
   yum:
-    name: python-pip
+    name: https://yum.128technology.com/installer/repo.rpm
+    state: present
+
+- name: installing 128T rpm repo
+  yum:
+    name: 128T-installer
     state: latest
-    update_cache: yes
+
+- name: creating /etc/pki/128technology
+  file:
+    path: /etc/pki/128technology
+    state: directory
+
+- name: downloading client_cert.pem for installer
+  get_url:
+    url: https://yum.128technology.com/file/client_cert.pem
+    dest: /etc/pki/128technology/release.pem

@@ -12,6 +12,10 @@
     api_key: "{{ exoscaleConfig['api_key'] }}"
     api_secret: "{{ exoscaleConfig['api_secret'] }}"
     api_url: "{{ exoscaleConfig['endpoint'] }}"
+    user_data: |
+      #cloud-config
+      runcmd:|
+        - echo xx > /root/x
   delegate_to: localhost
   register: exoscale_instance
 

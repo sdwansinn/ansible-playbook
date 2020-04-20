@@ -10,7 +10,6 @@
     security_groups: "{{ exoscaleConfig['security_groups'] }}"
     api_key: "{{ exoscaleConfig['api_key'] }}"
     api_secret: "{{ exoscaleConfig['api_secret'] }}"
-    endpoint: "{{ exoscaleConfig['endpoint'] }}"
   delegate_to: localhost
   register: exoscale_instance
 

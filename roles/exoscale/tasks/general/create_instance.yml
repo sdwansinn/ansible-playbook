@@ -3,7 +3,7 @@
   cs_instance:
     name: "{{ exoscaleConfig['name'] }}"
     template: "{{ exoscaleConfig['template'] }}"
-    template_filter: "mine"
+    template_filter: "all"
     zone: "{{ exoscaleConfig['zone'] }}"
     service_offering: "{{ exoscaleConfig['type'] }}"
     disk_size: "{{ exoscaleConfig['disk_size'] }}"
